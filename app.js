@@ -1,4 +1,4 @@
-//The Computer 
+//The Computer Selection
 const computerPlay = () => {
     let result;
     let random = Math.floor(Math.random() * 3) + 1
@@ -15,27 +15,27 @@ const computerPlay = () => {
     return result
 }
 
-const playGame = (playerInput, cpu) => {
-    playerInput = playerInput.toLowerCase()
+const playGame = (playerSelection, cpuSelection) => {
+    playerSelection = playerSelection.toLowerCase()
     let result;
 
-    if (playerInput === 'rock' && cpu === 'scissors') {
+    if (playerSelection === 'rock' && cpuSelection === 'scissors') {
         result = 'You win!'
-    } else if (playerInput === 'rock' && cpu === 'paper') {
+    } else if (playerSelection === 'rock' && cpuSelection === 'paper') {
         result = 'You lose!'
-    } else if (playerInput === 'rock' && cpu === 'rock') {
+    } else if (playerSelection === 'rock' && cpuSelection === 'rock') {
         result = 'It is a tie!'
-    } else if (playerInput === 'paper' && cpu === 'scissors') {
+    } else if (playerSelection === 'paper' && cpuSelection === 'scissors') {
         result = 'You lose!'
-    } else if (playerInput === 'paper' && cpu === 'paper') {
+    } else if (playerSelection === 'paper' && cpuSelection === 'paper') {
         result = 'It is a tie!'
-    } else if (playerInput === 'paper' && cpu === 'rock') {
+    } else if (playerSelection === 'paper' && cpuSelection === 'rock') {
         result = 'You win!'
-    } else if (playerInput === 'scissors' && cpu === 'scissors') {
+    } else if (playerSelection === 'scissors' && cpuSelection === 'scissors') {
         result = 'It is a tie!'
-    } else if (playerInput === 'scissors' && cpu === 'paper') {
+    } else if (playerSelection === 'scissors' && cpuSelection === 'paper') {
         result = 'You win!'
-    } else if (playerInput === 'scissors' && cpu === 'rock') {
+    } else if (playerSelection === 'scissors' && cpuSelection === 'rock') {
         result = 'You lose!'
     } else {
         return 'error'
@@ -44,9 +44,10 @@ const playGame = (playerInput, cpu) => {
     return result
 }
 
-// let playerInput = 'rock'
-// let cpu = computerPlay();
-// console.log(playGame(playerInput, cpu))
-// console.log(playerInput)
-// console.log(cpu)
+// let playerSelection = 'rock'
+// let cpuSelection = computerPlay()
+// console.log(playGame(playerSelection, cpuSelection))
+
+
+
 
