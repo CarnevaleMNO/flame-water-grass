@@ -1,4 +1,3 @@
-//The Computer Selection
 const computerPlay = () => {
     let result;
     let random = Math.floor(Math.random() * 3) + 1
@@ -13,41 +12,63 @@ const computerPlay = () => {
         return 'error'
     }
     return result
-}
+};
 
 const playGame = (playerSelection, cpuSelection) => {
     playerSelection = playerSelection.toLowerCase()
-    let result;
 
     if (playerSelection === 'rock' && cpuSelection === 'scissors') {
-        result = 'You win!'
+        console.log('You win!')
+        return playerWins += 1;
     } else if (playerSelection === 'rock' && cpuSelection === 'paper') {
-        result = 'You lose!'
+        console.log('You lose!')
+        return cpuWins += 1;
     } else if (playerSelection === 'rock' && cpuSelection === 'rock') {
-        result = 'It is a tie!'
+        console.log('It is a tie!')
+        return;
     } else if (playerSelection === 'paper' && cpuSelection === 'scissors') {
-        result = 'You lose!'
+        console.log('You lose!')
+        return cpuWins += 1;
     } else if (playerSelection === 'paper' && cpuSelection === 'paper') {
-        result = 'It is a tie!'
+        console.log('It is a tie!')
+        return;
     } else if (playerSelection === 'paper' && cpuSelection === 'rock') {
-        result = 'You win!'
+        console.log('You win!')
+        return playerWins += 1;
     } else if (playerSelection === 'scissors' && cpuSelection === 'scissors') {
-        result = 'It is a tie!'
+        console.log('It is a tie!')
+        return;
     } else if (playerSelection === 'scissors' && cpuSelection === 'paper') {
-        result = 'You win!'
+        console.log('You win!')
+        return playerWins += 1;
     } else if (playerSelection === 'scissors' && cpuSelection === 'rock') {
-        result = 'You lose!'
+        console.log('You lose!')
+        return cpuWins += 1;
     } else {
-        return 'error'
+        return 'Error. Please choose from paper, rock or scissors.'
     }
+};
 
-    return result
-}
+// let cpuSelection = computerPlay();
+let playerInput = document.querySelector('#playerInput')
+const btn = document.querySelector('button');
 
-// let playerSelection = 'rock'
-// let cpuSelection = computerPlay()
-// console.log(playGame(playerSelection, cpuSelection))
+const form = document.querySelector('#game-form');
+form.addEventListener('submit', function(eventObject){
+    eventObject.preventDefault();
+});
 
+let playerWins = 0;
+let cpuWins = 0;
+console.log(`Player Score: ${playerWins}`);
+console.log(`Computer Score: ${cpuWins}`);
 
+btn.addEventListener('click', function() {
+    let playerSelection = playerInput.value
+    let cpuSelection = computerPlay();
+    playGame(playerSelection, cpuSelection)
+    console.log(`Player Score: ${playerWins}`);
+    console.log(`Computer Score: ${cpuWins}`);
+});
 
 
