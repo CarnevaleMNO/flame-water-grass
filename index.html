@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <h1>Rock, Paper, or Scissors?</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Elements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>A wild monster appeared!</h1>
     <form id="game-form">
-        <label for="playerInput">Choose here:</label>
-        <input type="text" class="playerInput" id="playerInput" autocomplete="off">
-        <button type="submit">Submit</button>
+      <!-- <label for="playerInput">Choose here:</label> -->
+      <label for="choices">Choose Here:</label>
+      <div class="choices" id="choices">
+        <button type="submit" class="btn rock" value="rock"></button>
+        <button type="submit" class="btn paper" value="paper"></button>
+        <button type="submit" class="btn scissors" value="scissors"></button>
+      </div>
+
+      <!-- <input
+        type="text"
+        class="playerInput"
+        id="playerInput"
+        autocomplete="off"
+      />
+      <button type="submit">Submit</button> -->
     </form>
-
-    <h2 id="results"></h2>
-    
-    <p id="p1">Player Score:</p>
-    <p id="c1">Computer Score:</p>
-
+    <div class="results">
+      <h2 id="results"></h2>
+      <p id="p1">Player Score:</p>
+      <p id="c1">Monster Score:</p>
+    </div>
 
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>
